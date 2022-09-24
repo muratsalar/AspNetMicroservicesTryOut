@@ -1,6 +1,7 @@
 ﻿using Catalog.API.Data;
 using Catalog.API.Entities;
 using MongoDB.Driver;
+using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -11,6 +12,10 @@ namespace Catalog.API.Repositories
     {
         private readonly ICatalogContext catalogContext;
 
+        public ProductRepository(ICatalogContext context)
+        {
+            catalogContext = context ?? throw new ArgumentNullException(nameof(context));
+        }
         public async Task CreateProduct(Product product)
         {
             await catalogContext.Products.InsertOneAsync(product);
