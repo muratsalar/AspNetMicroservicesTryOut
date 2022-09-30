@@ -21,15 +21,15 @@ namespace Basket.API.Repositories
             await _redisCache.RemoveAsync(username);
         }
 
-        public async Task<ShoppingCard> GetBasket(string username)
+        public async Task<ShoppingCart> GetBasket(string username)
         {
             var basket = await _redisCache.GetStringAsync(username);
             if (string.IsNullOrEmpty(basket))
                 return null;
-            return JsonConvert.DeserializeObject<ShoppingCard>(basket);
+            return JsonConvert.DeserializeObject<ShoppingCart>(basket);
         }
 
-        public async Task<ShoppingCard> UpdateBasket(ShoppingCard basket)
+        public async Task<ShoppingCart> UpdateBasket(ShoppingCart basket)
         {
             await _redisCache.SetStringAsync(basket.UserName, JsonConvert.SerializeObject(basket));
             return await GetBasket(basket.UserName);

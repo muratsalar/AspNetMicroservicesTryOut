@@ -20,7 +20,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Basket.API", "Services\Bask
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Discount", "Discount", "{53EB334A-98F1-4E4D-B735-9C6D2D092CB1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Discount.API", "Services\Discount\Discount.API\Discount.API.csproj", "{9AA61F71-7AC1-4314-8C66-F8FF2271396F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Discount.API", "Services\Discount\Discount.API\Discount.API.csproj", "{9AA61F71-7AC1-4314-8C66-F8FF2271396F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
